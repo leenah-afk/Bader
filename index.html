@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>بادر</title> <!-- إذا تبين بعد أشيل كلمة عالم التطوع -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- شريط التنقل -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="#home">الرئيسية</a></li>
+      <li><a href="#volunteers">المتطوعين المتاحين</a></li>
+      <li><a href="#about">من نحن</a></li>
+    </ul>
+  </nav>
+
+  <!-- الرئيسية -->
+  <section id="home">
+    <h1>بادر</h1> <!-- التغيير هنا فقط -->
+    <div class="section">
+      <button onclick="showForm()">انضم إلى التطوع</button>
+    </div>
+
+    <div class="section hidden" id="formSection">
+      <input type="text" id="name" placeholder="اسم المتطوع"><br>
+      <input type="number" id="age" placeholder="عمر المتطوع"><br>
+      <input type="text" id="location" placeholder="مكان التطوع"><br>
+
+      <label>تخصص التطوع:</label>
+      <select id="type" onchange="loadSkills()">
+        <option value="">اختر التخصص</option>
+        <option value="تعليم">تعليم</option>
+        <option value="صحة">صحة</option>
+        <option value="برمجة">برمجة</option>
+      </select>
+
+      <div class="options" id="skillsContainer"></div>
+
+      <button onclick="submitVolunteer()">انضم إلى فرصة تطوع</button>
+      <button onclick="addAvailableVolunteer()">تسجيل كمتطوع متاح</button>
+    </div>
+
+    <div class="section hidden" id="opportunitiesSection"></div>
+    <div class="section hidden" id="thankYouMessage"></div>
+  </section>
+
+  <!-- المتطوعين المتاحين -->
+  <section id="volunteers">
+    <div class="section hidden" id="availableVolunteersSection">
+      <h2>المتطوعين المتاحين:</h2>
+      <ul id="availableVolunteersList"></ul>
+
+      <div class="section">
+        <h2>بحث المؤسسات عن المتطوعين:</h2>
+        <label>اختر تخصص التطوع:</label>
+        <select id="searchType">
+          <option value="">اختر التخصص</option>
+          <option value="تعليم">تعليم</option>
+          <option value="صحة">صحة</option>
+          <option value="برمجة">برمجة</option>
+        </select>
+        <button onclick="searchVolunteers()">بحث</button>
+        <div id="searchResults"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- من نحن -->
+  <section id="about">
+    <div class="section">
+      <h2>عن بادر</h2>
+      <p>تطبيق "بادر" هو منصة تهدف إلى ربط المتطوعين بالفرص المناسبة لهم في مجالات التعليم، الصحة، والبرمجة داخل المملكة العربية السعودية، وتحفيزهم لخدمة مجتمعهم بفعالية.</p>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
